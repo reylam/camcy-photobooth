@@ -1,0 +1,43 @@
+{
+  "name": "camzy_booth",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@tailwindcss/vite": "^4.1.8",
+    "file-saver": "^2.0.5",
+    "framer-motion": "^12.23.0",
+    "gif.js": "^0.2.0",
+    "html-to-image": "^1.11.13",
+    "html2canvas": "^1.4.1",
+    "konva": "^9.3.22",
+    "lucide-react": "^0.525.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-konva": "^19.0.7",
+    "react-router-dom": "^7.6.2",
+    "react-webcam": "^7.2.0",
+    "tailwindcss": "^4.1.8",
+    "use-sound": "^5.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^6.3.5"
+  }
+}
