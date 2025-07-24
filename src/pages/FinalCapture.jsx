@@ -24,6 +24,7 @@ import {
   EyeOff,
 } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+// 
 
 // Import template images
 import colorfullStrip from "../assets/strip/colorfull.png";
@@ -935,7 +936,7 @@ export default function FinalCapture() {
     setIsSwitchingMode(true);
     setTimeout(() => {
       setIsSwitchingMode(false);
-    }, 300);
+    }, 1000);
   };
 
   // Share to WhatsApp
