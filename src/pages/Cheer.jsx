@@ -38,6 +38,33 @@ export default function Cheer() {
   const [deviceId, setDeviceId] = useState("");
   const [mirrored, setMirrored] = useState(true);
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [showMobileAlert, setShowMobileAlert] = useState(false);
+
+  // Check if mobile/tablet device
+  useEffect(() => {
+    const isMobileDevice = () => {
+      return (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        ) || window.innerWidth < 1024
+      );
+    };
+
+    if (isMobileDevice()) {
+      const timer = setTimeout(() => {
+        setShowMobileAlert(true);
+      }, 1000);
+
+      const hideTimer = setTimeout(() => {
+        setShowMobileAlert(false);
+      }, 5000);
+
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(hideTimer);
+      };
+    }
+  }, []);
 
   const videoConstraints = {
     aspectRatio: 4 / 3,
@@ -226,6 +253,35 @@ export default function Cheer() {
       </script>
 
       <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Mobile Alert */}
+        <AnimatePresence>
+          {showMobileAlert && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="fixed top-4 left-0 right-0 z-50 px-4"
+            >
+              <div className="bg-blue-600 text-white p-4 rounded-lg shadow-lg max-w-md mx-auto flex items-start">
+                <div className="flex-1">
+                  <h3 className="font-bold mb-1">For Best Experience</h3>
+                  <p className="text-sm">
+                    We recommend using desktop view for full functionality of
+                    the photo booth.
+                  </p>
+                </div>
+                <button
+                  onClick={() => setShowMobileAlert(false)}
+                  className="ml-2 text-white hover:text-blue-200"
+                >
+                  ✕
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Animated background elements */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
