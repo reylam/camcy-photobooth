@@ -57,7 +57,7 @@ export default function Cheer() {
 
       const hideTimer = setTimeout(() => {
         setShowMobileAlert(false);
-      }, 5000);
+      }, 7000);
 
       return () => {
         clearTimeout(timer);
