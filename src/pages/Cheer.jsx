@@ -305,12 +305,7 @@ export default function Cheer() {
                       I
                     </span>
                   </div>
-                  <div className="flex justify-between py-2">
-                    <span className="text-gray-300">Volume Up/Down</span>
-                    <span className="text-sm text-gray-400">
-                      Also works as Capture/Reset
-                    </span>
-                  </div>
+                 
                 </div>
               </motion.div>
             </motion.div>
