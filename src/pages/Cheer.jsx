@@ -467,7 +467,6 @@ export default function Cheer() {
                 style={{
                   aspectRatio: "4/3",
                   width: "100%",
-                  maxHeight: "100vh",
                 }}
               >
                 {currentStep === 0 ? (
