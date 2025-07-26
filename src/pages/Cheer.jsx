@@ -40,8 +40,7 @@ export default function Cheer() {
   const [showShortcuts, setShowShortcuts] = useState(false);
 
   const videoConstraints = {
-    width: 640,
-    height: 480,
+    aspectRatio: 4 / 3,
     facingMode: "user",
     deviceId: deviceId ? { exact: deviceId } : undefined,
   };
@@ -305,7 +304,6 @@ export default function Cheer() {
                       I
                     </span>
                   </div>
-                 
                 </div>
               </motion.div>
             </motion.div>
@@ -464,7 +462,14 @@ export default function Cheer() {
               </div>
 
               {/* Camera */}
-              <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-lg">
+              <div
+                className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-lg"
+                style={{
+                  aspectRatio: "4/3",
+                  width: "100%",
+                  maxHeight: "75vh",
+                }}
+              >
                 {currentStep === 0 ? (
                   <>
                     <Webcam
@@ -607,6 +612,7 @@ export default function Cheer() {
                         <motion.div
                           key={index}
                           className="relative overflow-hidden rounded-lg"
+                          style={{ aspectRatio: "4/3" }}
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.8 }}
