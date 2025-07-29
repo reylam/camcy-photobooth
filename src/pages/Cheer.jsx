@@ -455,7 +455,7 @@ export default function Cheer() {
                     }}
                     className="w-full bg-gray-800 border border-gray-700 text-white p-2 rounded-lg text-sm focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   >
-                    {[2, 3, 4, 5].map((count) => (
+                    {[2, 3, 4].map((count) => (
                       <option key={count} value={count}>
                         {count} photos
                       </option>
